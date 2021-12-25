@@ -43,6 +43,7 @@
 }
 
 .task-list-container {
+  position: relative;
   display: flex;
   flex-grow: 1;
   border-radius: 0 8px 8px 0;
@@ -80,4 +81,14 @@
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.circle-add-button {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  border-radius: 100%;
+  color: #fff;
 }
