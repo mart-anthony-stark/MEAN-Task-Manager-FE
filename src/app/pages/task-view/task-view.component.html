@@ -6,18 +6,12 @@
             </h1>
 
             <div class="list-menu">
-                <a href="#" class="list-menu-item is-active">
-                    <p>List 1</p>
-                </a>
-                <a href="#" class="list-menu-item">
-                    <p>List 2</p>
-                </a>
-                <a href="#" class="list-menu-item">
-                    <p>List 3</p>
+                <a *ngFor="let list of lists" href="#" class="list-menu-item is-active">
+                    <p>{{list.title}}</p>
                 </a>
             </div>
 
-            <button class="button is-primary">+ New List</button>
+            <button (click)="createNewList()" class="button is-primary">+ New List</button>
 
         </div>
 
@@ -27,6 +21,10 @@
             </h1>
 
             <!-- TASK ELEMENTS -->
+            <div class="task complete">
+                <p>This is something I have to do</p>
+            </div>
+
             <div class="task complete">
                 <p>This is something I have to do</p>
             </div>
