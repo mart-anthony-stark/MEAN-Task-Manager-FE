@@ -12,7 +12,11 @@ export class TaskService {
     return this.webService.post('lists', { title });
   }
 
-  getLists(){
-    return this.webService.get('lists')
+  getLists() {
+    return this.webService.get('lists');
+  }
+
+  getTasks(listId: string) {
+    return this.webService.get(`lists/${listId}/tasks`);
   }
 }
