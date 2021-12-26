@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { TaskService } from 'src/app/task.service';
+import { Task } from '../../models/task.model';
+import { List } from '../../models/list.model';
 
 @Component({
   selector: 'app-task-view',
@@ -16,7 +18,7 @@ export class TaskViewComponent implements OnInit {
 
   public lists: any = [];
   public tasks: any = [];
-  public id: String = '';
+  public id: string = '';
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
@@ -34,5 +36,11 @@ export class TaskViewComponent implements OnInit {
 
   addTask() {
     this.router.navigate([`lists/${this.id}/new-task`]);
+  }
+
+  onTaskClick(task: Task) {
+    this.taskService.complete(task).subscribe((res: any) => {
+      task.completed = !task.completed;
+    });
   }
 }

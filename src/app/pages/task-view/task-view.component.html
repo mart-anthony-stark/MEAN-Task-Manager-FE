@@ -22,7 +22,8 @@
             </h1>
 
             <!-- TASK ELEMENTS -->
-            <div *ngFor="let task of tasks" class="task">
+            <div *ngFor="let task of tasks" class="task" [class.complete]="task.completed"
+                (dblclick)="onTaskClick(task)">
                 <p>{{task.title}}</p>
             </div>
 
