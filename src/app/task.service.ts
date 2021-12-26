@@ -19,4 +19,8 @@ export class TaskService {
   getTasks(listId: string) {
     return this.webService.get(`lists/${listId}/tasks`);
   }
+
+  createTask(listId: string, title: string) {
+    return this.webService.post(`lists/${listId}/tasks`, { title });
+  }
 }
