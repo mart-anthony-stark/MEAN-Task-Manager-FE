@@ -22,11 +22,11 @@
             </h1>
 
             <!-- TASK ELEMENTS -->
-            <div *ngFor="let task of tasks" class="task complete">
+            <div *ngFor="let task of tasks" class="task">
                 <p>{{task.title}}</p>
             </div>
 
-            <button class="circle-add-button button is-primary">
+            <button (click)="addTask()" class="circle-add-button button is-primary">
                 <img src="/assets/plus-icon.svg">
             </button>
         </div>
