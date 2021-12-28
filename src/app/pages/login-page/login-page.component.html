@@ -4,7 +4,7 @@
 
         <div class="field">
             <p class="control has-icons-left has-icons-right">
-                <input class="input has-background-light" type="email" placeholder="Email">
+                <input #emailInput class="input has-background-light" type="email" placeholder="Email">
                 <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                 </span>
@@ -12,7 +12,7 @@
         </div>
         <div class="field">
             <p class="control has-icons-left">
-                <input class="input has-background-light" type="password" placeholder="Password">
+                <input #passwordInput class="input has-background-light" type="password" placeholder="Password">
                 <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                 </span>
@@ -20,7 +20,7 @@
         </div>
         <div class="field">
             <p class="control">
-                <button class="button is-success is-pulled-right">
+                <button (click)="onLoginClick(emailInput.value, passwordInput.value)" class="button is-success is-pulled-right">
                     Login
                 </button>
             </p>
