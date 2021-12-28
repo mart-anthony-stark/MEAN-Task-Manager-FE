@@ -26,6 +26,8 @@
                 (dblclick)="onTaskClick(task)">
                 <p>{{task.title}}</p>
             </div>
+            <h3 *ngIf="!id" class="empty-state">Please select a list from the sidebar</h3>
+            <h3 *ngIf="id && tasks.length===0" class="empty-state">There are no tasks yet</h3>
 
             <button (click)="addTask()" class="circle-add-button button is-primary">
                 <img src="/assets/plus-icon.svg">
