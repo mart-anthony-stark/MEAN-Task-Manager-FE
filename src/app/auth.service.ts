@@ -29,20 +29,20 @@ export class AuthService {
     );
   }
 
-  // signup(email: string, password: string) {
-  //   return this.webService.signup(email, password).pipe(
-  //     shareReplay(),
-  //     tap((res: HttpResponse<any>) => {
-  //       // the auth tokens will be in the header of this response
-  //       this.setSession(
-  //         res.body._id,
-  //         res.headers.get('x-access-token') || '',
-  //         res.headers.get('x-refresh-token') || ''
-  //       );
-  //       console.log('Successfully signed up and now logged in!');
-  //     })
-  //   );
-  // }
+  signup(email: string, password: string) {
+    return this.webService.signup(email, password).pipe(
+      shareReplay(),
+      tap((res: HttpResponse<any>) => {
+        // the auth tokens will be in the header of this response
+        this.setSession(
+          res.body._id,
+          res.headers.get('x-access-token') || '',
+          res.headers.get('x-refresh-token') || ''
+        );
+        console.log('Successfully signed up and now logged in!');
+      })
+    );
+  }
 
   logout() {
     this.removeSession();
