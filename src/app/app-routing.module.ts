@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NewListComponent } from './pages/new-list/new-list.component';
 import { NewTaskComponent } from './pages/new-task/new-task.component';
+import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { TaskViewComponent } from './pages/task-view/task-view.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'new-list', component: NewListComponent },
   { path: 'lists/:id/new-task', component: NewTaskComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'signup', component: SignupPageComponent },
 ];
 
 @NgModule({
